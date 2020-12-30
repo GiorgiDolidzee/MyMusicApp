@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".RegisterActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:elevation="7dp"
+            android:paddingEnd="7dp" />
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button"
+            android:elevation="7dp"
+            android:paddingEnd="7dp" />
+
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button"
+            android:elevation="7dp"
+            android:paddingEnd="7dp" />
+
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:textSize="12sp"
+            android:fontFamily="@font/bpgmrgval"
+            android:text="რეგისტრაცია"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/signUpEmailEditText"
+        android:layout_width="285dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="197dp"
+        android:background="#FFE1E1E1"
+        android:ems="10"
+        android:hint="მაილი"
+        android:inputType="textEmailAddress"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/signUpPasswordEditText"
+        android:layout_width="285dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="133dp"
+        android:background="#FFE1E1E1"
+        android:ems="10"
+        android:hint="პაროლი"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/signUpConfirmPasswordEditText"
+        android:layout_width="285dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="65dp"
+        android:background="#FFE1E1E1"
+        android:ems="10"
+        android:hint="@string/configrpw"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

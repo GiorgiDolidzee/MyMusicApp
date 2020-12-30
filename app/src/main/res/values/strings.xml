@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyMusicApp</string>
+    <string name="create_your_account"><![CDATA[Create Your Account ->]]></string>
+    <string name="signIn">შესვლა</string>
+    <string name="forgotpassword">დაგავიწყდა პაროლი?</string>
+    <string name="join">JOIN</string>
+    <string name="configrpw">გაიმეორეთ პაროლი</string>
+</resources>
