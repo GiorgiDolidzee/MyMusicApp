@@ -4,7 +4,7 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/home_flaticon"
-        android:title="სახლი" />
+        android:title="მთავარი" />
 
     <item
         android:id="@+id/navigation_mymusic"

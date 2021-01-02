@@ -21,6 +21,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        supportActionBar?.hide()
+
         mAuth = FirebaseAuth.getInstance()
 
         inputEmail = findViewById(R.id.signUpEmailEditText)

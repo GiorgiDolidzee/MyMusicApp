@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var loginButton: Button
+    private lateinit var loginButton: TextView
     private lateinit var resetTextView: TextView
     private lateinit var inputEmail: EditText
     private lateinit var inputPassword: EditText
@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
 

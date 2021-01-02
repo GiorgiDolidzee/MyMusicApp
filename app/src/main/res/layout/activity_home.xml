@@ -14,7 +14,7 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/navigation_menu_design"
         app:itemIconTint="@drawable/item_selector"
-        app:itemTextColor="#FF00C6DD"
+        app:itemTextColor="#FFEA1740"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
