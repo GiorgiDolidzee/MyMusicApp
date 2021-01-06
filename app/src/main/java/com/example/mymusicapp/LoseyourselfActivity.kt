@@ -32,7 +32,6 @@ class LoseyourselfActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loseyourself)
-        supportActionBar?.hide()
 
         mp = MediaPlayer.create(this, R.raw.loseyourselfmusic)
 
