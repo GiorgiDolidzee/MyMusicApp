@@ -62,7 +62,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/eminemPhoto"
+                    android:id="@+id/eminemImageButton"
                     android:layout_width="140dp"
                     android:layout_height="160dp"
                     android:layout_marginStart="22dp"
@@ -72,7 +72,7 @@
                     android:scaleType="centerCrop" />
 
                 <ImageButton
-                    android:id="@+id/eminemPhotos"
+                    android:id="@+id/twopacImageButton"
                     android:layout_width="140dp"
                     android:layout_height="160dp"
                     android:layout_marginTop="10dp"
@@ -134,7 +134,7 @@
                 android:background="@drawable/loseyourself" />
 
             <ImageButton
-                android:id="@+id/lilwayneDropTheWorld2"
+                android:id="@+id/lilwayneDropTheWorld"
                 android:layout_width="380.5dp"
                 android:layout_height="68.5dp"
                 android:layout_gravity="center"

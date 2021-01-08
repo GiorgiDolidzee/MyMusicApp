@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMusicApp">
-        <activity android:name=".TasteActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MusicPlayerActivity" />
         <activity android:name=".LoseyourselfActivity" />
         <activity android:name=".EminemActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".SignInActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
