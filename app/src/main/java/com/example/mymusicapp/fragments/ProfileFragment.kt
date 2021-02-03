@@ -85,7 +85,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                         Glide.with(this@ProfileFragment)
                                 .load(p.imageUrl)
                                 .centerCrop()
-                                .placeholder(R.drawable.ic_launcher_foreground)
+                                .placeholder(R.drawable.profilephotoframe)
                                 .into(imageView)
 
                     }

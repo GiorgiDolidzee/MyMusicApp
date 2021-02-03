@@ -14,7 +14,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TRENDS"
+            android:text="TOP"
             android:textColor="@color/white"
             android:layout_marginStart="27dp"
             android:layout_marginTop="20dp"

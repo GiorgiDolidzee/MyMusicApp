@@ -22,6 +22,7 @@
         android:layout_marginBottom="300dp"
         android:scaleType="centerCrop"
         android:background="@drawable/profilephotoframe"
+        android:src="#AEAEAE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +72,8 @@
 
     <EditText
         android:id="@+id/imageUrlEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:paddingEnd="20dp"
         android:paddingBottom="5dp"
