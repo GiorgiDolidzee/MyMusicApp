@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -35,12 +36,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         eminemImageButton.setOnClickListener {
             startActivity(Intent(activity, EminemActivity::class.java))
         }
-
         twopacImageButton = view.findViewById(R.id.twopacImageButton)
         twopacImageButton.setOnClickListener {
-            startActivity(Intent(activity, EminemActivity::class.java))
+            startActivity(Intent(activity, TwopacActivity::class.java))
         }
-
 
         // • Music List •
         loseYourSelf = view.findViewById(R.id.eminemLoveYourself)

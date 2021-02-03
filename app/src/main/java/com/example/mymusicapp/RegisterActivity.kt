@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
@@ -35,14 +36,21 @@ class RegisterActivity : AppCompatActivity() {
             val password = inputPassword.text.toString()
             val confirmPassowrd = inputConfirmPassword.text.toString()
 
-            if (email.isEmpty() || password.isEmpty() || confirmPassowrd.isEmpty() || (password != confirmPassowrd)) {
+            if (email.isEmpty() && password.isEmpty() && confirmPassowrd.isEmpty() && (password != confirmPassowrd)) {
                 Toast.makeText(this, "შეიყვანეთ ყველა ველი სწორად !", Toast.LENGTH_LONG).show()
             } else {
                 mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            startActivity(Intent(this, MainActivity::class.java))
-                            finish()
+                            val builder = AlertDialog.Builder(this)
+                            builder.setTitle("! ! !")
+                            builder.setMessage("თქვენი პერსონალური ინფორმაცია შენახულია და დაცულია ბაზაში")
+                            builder.setPositiveButton("გასაგებია") { dialog, i ->
+                                dialog.dismiss()
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            }
+                            builder.show().setCanceledOnTouchOutside(false)
                         } else {
                             Toast.makeText(this, "შეამოწმეთ ყველა ველი", Toast.LENGTH_LONG).show()
                         }

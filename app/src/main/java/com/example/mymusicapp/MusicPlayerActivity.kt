@@ -3,7 +3,6 @@ package com.example.mymusicapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -12,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MusicPlayerActivity : AppCompatActivity() {
 
@@ -74,10 +74,48 @@ class MusicPlayerActivity : AppCompatActivity() {
             musicBackImage.setBackgroundResource(R.drawable.ukanaalleyezonme)
             musicName.text = "All Eyez On Me"
             musicArtist.text = "2 Pac"
-        }
-        
 
-        playBtn = findViewById(R.id.playBtn)
+        } else if (musname == "gangstaparadise") {
+            backFromMusic()
+            mp = MediaPlayer.create(this, R.raw.gangstaparadise)
+            musicImage.setBackgroundResource(R.drawable.gangstaparadisephoto)
+            musicBackImage.setBackgroundResource(R.drawable.ukanagangstaparadise)
+            musicName.text = "Gangsta's Paradise"
+            musicArtist.text = "Coolie"
+
+        }  else if (musname == "killer") {
+            backFromMusic()
+            mp = MediaPlayer.create(this, R.raw.killer)
+            musicImage.setBackgroundResource(R.drawable.killerphoto)
+            musicBackImage.setBackgroundResource(R.drawable.killerukana)
+            musicName.text = "Killer"
+            musicArtist.text = "Eminem"
+
+        }  else if (musname == "stilldre") {
+            backFromMusic()
+            mp = MediaPlayer.create(this, R.raw.stilldre)
+            musicImage.setBackgroundResource(R.drawable.stilldrephoto)
+            musicBackImage.setBackgroundResource(R.drawable.stilldreukana)
+            musicName.text = "Still D.R.E"
+            musicArtist.text = "Dr.Dre ft. Snoop Dogg"
+
+        }  else if (musname == "californialove") {
+            backFromMusic()
+            mp = MediaPlayer.create(this, R.raw.californialove)
+            musicImage.setBackgroundResource(R.drawable.californialovephoto)
+            musicBackImage.setBackgroundResource(R.drawable.californialoveukana)
+            musicName.text = "California Love"
+            musicArtist.text = "2Pac ft Dr.Dre"
+        } else if (musname == "farshevangi") {
+            mp = MediaPlayer.create(this, R.raw.farshevangigaliashi)
+            musicImage.setBackgroundResource(R.drawable.farshevangiphoto)
+            musicBackImage.setBackgroundResource(R.drawable.farshevangiukana)
+            musicName.text = "ფარშევანგი გალიაში"
+            musicArtist.text = "Nikoloz Katsitadze & Giorgi Dolidze"
+            backFromMusic()
+        }
+
+    playBtn = findViewById(R.id.playBtn)
         volumeBar = findViewById(R.id.volumeBar)
         positionBar = findViewById(R.id.positionBar)
 
@@ -90,51 +128,48 @@ class MusicPlayerActivity : AppCompatActivity() {
 
         // Volume bar
         volumeBar.setOnSeekBarChangeListener(
-            object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(
-                    seekBar: SeekBar?,
-                    progress: Int,
-                    fromUser: Boolean
-                )
-                {
-                    if (fromUser) {
-                        var volumeNum = progress / 50.0f
-                        mp.setVolume(volumeNum, volumeNum)
+                object : SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(
+                            seekBar: SeekBar?,
+                            progress: Int,
+                            fromUser: Boolean
+                    ) {
+                        if (fromUser) {
+                            var volumeNum = progress / 50.0f
+                            mp.setVolume(volumeNum, volumeNum)
+                        }
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                    }
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
                     }
                 }
-
-                override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                }
-
-                override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                }
-            }
         )
-
         // Position Bar
         positionBar.max = totalTime
         positionBar.setOnSeekBarChangeListener(
-            object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(
-                    seekBar: SeekBar?,
-                    progress: Int,
-                    fromUser: Boolean
-                ) {
-                    if (fromUser) {
-                        mp.seekTo(progress)
+                object : SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(
+                            seekBar: SeekBar?,
+                            progress: Int,
+                            fromUser: Boolean
+                    ) {
+                        if (fromUser) {
+                            mp.seekTo(progress)
+                        }
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
                     }
                 }
-
-                override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                }
-
-                override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                }
-            }
         )
-
         // Thread
         Thread(Runnable {
             while (mp != null) {
@@ -144,29 +179,23 @@ class MusicPlayerActivity : AppCompatActivity() {
                     handler.sendMessage(msg)
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
-
                 }
             }
         }).start()
 
     }
-
     @SuppressLint("HandlerLeak")
     var handler = object : Handler() {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             var currentPosition = msg.what
-
             // Update positionbar
             positionBar.progress = currentPosition
-
             // Update labels
             var elapsedTime = createTimeLabel(currentPosition)
             elapsedTimeLabel.text = elapsedTime
-
             var remainingTime = createTimeLabel(totalTime - currentPosition)
             remainingTimeLabel.text = "-$remainingTime"
-
         }
     }
 
@@ -178,22 +207,17 @@ class MusicPlayerActivity : AppCompatActivity() {
         timeLabel = "$min:"
         if (sec < 10) timeLabel += "0"
         timeLabel += sec
-
         return timeLabel
 
     }
 
-
     fun playBtnClick(v: View) {
-
         if (mp.isPlaying) {
             // stop
-
             mp.pause()
             playBtn.setBackgroundResource(R.drawable.playicon)
         } else {
             // Start
-
             mp.start()
             playBtn.setBackgroundResource(R.drawable.pauseicon)
         }
