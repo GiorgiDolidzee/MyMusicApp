@@ -15,6 +15,7 @@ class EminemActivity : AppCompatActivity() {
     private lateinit var backeminemtext: TextView
 
     private lateinit var killer: ImageView
+    private lateinit var loseyourself: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,9 +53,13 @@ class EminemActivity : AppCompatActivity() {
             this.startActivity(myActivity)
         }
 
-
-
-
+        loseyourself = findViewById(R.id.loseyourselfEminem)
+        loseyourself.setOnClickListener {
+            musicname = "loseyourself"
+            val myActivity = (Intent(this, MusicPlayerActivity::class.java))
+            myActivity.putExtra("value", musicname)
+            this.startActivity(myActivity)
+        }
 
     }
 }

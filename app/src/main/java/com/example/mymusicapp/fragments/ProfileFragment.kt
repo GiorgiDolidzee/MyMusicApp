@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.renderscript.Sampler
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -22,6 +23,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var nameTextView: TextView
     private lateinit var imageView: ImageView
     private lateinit var logoutButton: ImageButton
+
+    private lateinit var infoButton: ImageButton
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var db: DatabaseReference
@@ -95,7 +98,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         }
 
+        infoButton = view.findViewById(R.id.infoButton)
+        infoButton.setOnClickListener {
+            val builder = activity?.let { it1 -> AlertDialog.Builder(it1) }
+            if (builder != null) {
+                builder.setTitle("INFO")
+                builder.setMessage("ნებისმიერი პრობლემის აღმოჩენის შემთხვევაში დაგვიკავშირდით მეილზე: \n \n giorgi.dolidze.2@btu.edu.ge")
+                builder.setPositiveButton("გასაგებია") { dialog, i ->
+                    dialog.dismiss()
+                }
+                builder.show().setCanceledOnTouchOutside(false)
+            }
 
+        }
 
     }
 }

@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         resetTextView.setOnClickListener {
-
+            startActivity(Intent(this, ResetActivity::class.java))
         }
 
     }

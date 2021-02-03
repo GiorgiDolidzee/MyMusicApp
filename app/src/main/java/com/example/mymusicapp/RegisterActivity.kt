@@ -15,6 +15,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var inputPassword: EditText
     private lateinit var inputConfirmPassword: EditText
     private lateinit var registerButton: TextView
+    private lateinit var loginInstead: TextView
 
     private lateinit var mAuth: FirebaseAuth
 
@@ -57,6 +58,11 @@ class RegisterActivity : AppCompatActivity() {
                     }
             }
 
+        }
+
+        loginInstead = findViewById(R.id.loginInstead)
+        loginInstead.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }

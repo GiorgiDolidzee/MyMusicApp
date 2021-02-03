@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMusicApp">
-        <activity android:name=".TwopacActivity"></activity>
+        <activity android:name=".ResetActivity"></activity>
+        <activity android:name=".TwopacActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MusicPlayerActivity" />
         <activity android:name=".LoseyourselfActivity" />
